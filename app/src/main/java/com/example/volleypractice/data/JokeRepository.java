@@ -1,10 +1,12 @@
 package com.example.volleypractice.data;
 
+import android.util.Log;
+
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.volleypractice.controllers.AppController;
 import com.example.volleypractice.model.Joke;
 
@@ -37,6 +39,8 @@ public class JokeRepository {
                                 j.setJokeSetup(jsonObject.getString("setup"));
                                 j.setJokePunchline(jsonObject.getString("punchline"));
 
+                                // Log.d("JokeRepo", "onResponse: JokeSetup " + i + ": " + j.getJokeSetup());
+
                                 jokeList.add(j);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -53,6 +57,8 @@ public class JokeRepository {
 
                     }
                 });
+
+        AppController.getInstance().addToRequestQueue(jsonArrReq);
 
         return jokeList;
     }

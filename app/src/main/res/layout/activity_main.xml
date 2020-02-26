@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/textView_title"
-        android:layout_width="218dp"
+        android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/cookie"
@@ -33,19 +33,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_title">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="249dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <TextView
-                android:id="@+id/textView_joke"
+                android:id="@+id/textView_jokeSetup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:padding="8dp"
-                android:text="@string/textView_joke"
+                android:text="@string/textView_jokeSetup"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView_jokePunchline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:text="@string/textView_jokePunchline"
                 android:textSize="16sp" />
-        </RelativeLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">VolleyPractice</string>
-    <string name="textView_joke">Joke goes here</string>
-    <string name="textView_title">Title goes here</string>
+    <string name="textView_jokeSetup">Joke setup goes here</string>
+    <string name="textView_jokePunchline">Joke punchline goes here</string>
+    <string name="textView_title">Jokes</string>
     <string name="imageButton_play">Play button</string>
 </resources>
