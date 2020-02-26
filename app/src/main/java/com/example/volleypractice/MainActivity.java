@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView jokePunchlineTextView;
     private ImageButton playImageBtn;
 
-    private List<Joke> jokeList;
-    private int jokeIndex = 0;
+    private JokeRepository jokeRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +31,16 @@ public class MainActivity extends AppCompatActivity {
         jokePunchlineTextView = findViewById(R.id.textView_jokePunchline);
         playImageBtn = findViewById(R.id.imageButton_play);
 
-        jokeList = new JokeRepository().getTenJokes(new GetJokeListener() {
+        jokeRepository = new JokeRepository();
+        getNewJoke();
+    }
+
+    public void getNewJoke(){
+        jokeRepository.getJoke(new GetJokeListener() {
             @Override
-            public void JokesReceived(ArrayList<Joke> jokeArrayList) {
-                Log.d("JOKE", "JokesReceived: " + jokeArrayList.get(0).getJokeSetup());
-                jokeSetupTextView.setText(jokeArrayList.get(jokeIndex).getJokeSetup());
-                jokePunchlineTextView.setText(jokeArrayList.get(jokeIndex).getJokePunchline());
+            public void JokeReceived(Joke joke) {
+                jokeSetupTextView.setText(joke.getJokeSetup());
+                jokePunchlineTextView.setText(joke.getJokePunchline());
             }
         });
     }
