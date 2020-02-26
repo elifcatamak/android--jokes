@@ -59,22 +59,18 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/button_newJoke"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/button_newJoke"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_joke">
+        app:layout_constraintTop_toBottomOf="@+id/cardView_joke" />
 
-        <ImageButton
-            android:id="@+id/imageButton_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:backgroundTint="@android:color/transparent"
-            android:contentDescription="@string/imageButton_play"
-            app:srcCompat="@android:drawable/ic_media_play" />
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

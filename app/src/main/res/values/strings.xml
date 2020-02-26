@@ -3,5 +3,5 @@
     <string name="textView_jokeSetup"></string>
     <string name="textView_jokePunchline"></string>
     <string name="textView_title">Jokes</string>
-    <string name="imageButton_play">Play button</string>
+    <string name="button_newJoke">New Joke</string>
 </resources>

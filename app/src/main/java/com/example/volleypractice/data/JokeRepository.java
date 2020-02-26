@@ -27,8 +27,11 @@ public class JokeRepository {
                             j.setJokeType(response.getString("type"));
                             j.setJokeSetup(response.getString("setup"));
                             j.setJokePunchline(response.getString("punchline"));
+
+                            Log.d("JokeRepoTry", "onResponse: " + j.getJokeSetup());
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Log.d("JokeRepoCatch", "onResponse: " + e);
                         }
 
                         if(callback != null)
@@ -38,7 +41,7 @@ public class JokeRepository {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Log.d("JokeRepoErr", "onErrorResponse: " + error);
                     }
                 });
 
